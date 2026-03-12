@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ── META ── -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Siddesh Patil</title>
+
+  <!-- ── FONTS — Geist (sans) + Geist Mono ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ── STYLES ── -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADER
+       Full-screen overlay shown on first visit.
+       Canvas (#lc) hosts the CV-detection box animation (main.js).
+       Fades out once progress hits 100%.
+       ============================================================ -->
+  <div id="loader">
+    <canvas id="lc"></canvas>
+    <div class="l-pct" id="lpct">0%</div>
+  </div>
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       Starts opacity:0, transitions to 1 when loader finishes.
+       ============================================================ -->
+  <div id="main">
+
+    <!-- ── NAVIGATION ── -->
+    <nav id="navbar">
+      <a href="#" class="nav-id">cdesh</a>
+      <ul class="nav-links">
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#github">github</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- ============================================================
+         HERO
+         Name animates from "cdesh patil" → "siddesh patil"
+         via split-flap effect triggered after loader completes.
+         ============================================================ -->
+    <section id="hero">
+      <div class="hero-inner fi" id="heroInner">
+
+        <!-- Name container — populated by main.js startNameFlip() -->
+        <div class="hero-name-wrap">
+          <div class="hero-name" id="heroName"></div>
+        </div>
+
+        <!-- Bio -->
+        <p class="hero-desc">
+          building systems at the intersection of
+          <strong>machine learning</strong>,
+          <strong>data pipelines</strong>, and
+          <strong>real-world hardware</strong>.
+          interested in ml, nlp, and model building.
+        </p>
+
+        <!-- Availability status with pulsing dot -->
+        <div class="hero-status">
+          <span class="sdot"></span>
+          <span>open to opportunities · graduating 2026</span>
+        </div>
+
+      </div><!-- /hero-inner -->
+
+      <!-- Scroll nudge -->
+      <div class="scroll-hint">scroll</div>
+    </section>
+
+
+    <!-- ============================================================
+         PROJECTS
+         Wide card (SoilStream) spans both columns.
+         Two regular cards below it.
+         ============================================================ -->
+    <section class="section alt" id="projects">
+      <div class="sec-label">projects</div>
+
+      <div class="fi">
+        <div class="proj-grid">
+
+          <!-- // 001 — SoilStream (wide, in-progress) -->
+          <div class="proj-card wide">
+            <div class="wide-inner">
+
+              <!-- Left: description + stack -->
+              <div>
+                <div class="proj-num">// 001</div>
+                <span class="proj-wip">● in progress — final year</span>
+                <h3 class="proj-title">SoilStream</h3>
+                <p class="proj-sub">aiot · precision agriculture · solar-powered</p>
+                <p class="proj-desc">
+                  Solar-powered AIoT system for precision agriculture.
+                  Real-time soil monitoring, automated irrigation, and a crop
+                  recommendation engine built to reduce water wastage.
+                </p>
+                <div class="proj-stack">
+                  <span class="stag">python</span>
+                  <span class="stag">ml</span>
+                  <span class="stag">iot</span>
+                  <span class="stag">rest api</span>
+                  <span class="stag">image analysis</span>
+                </div>
+              </div>
+
+              <!-- Right: feature list -->
+              <ul class="proj-feats">
+                <li>Real-time monitoring of soil moisture, temperature, humidity</li>
+                <li>Automated irrigation using precision control</li>
+                <li>ML model for rainfall probability — historical + live weather data</li>
+                <li>API-based recommendation engine for fertilizer, pH correction</li>
+                <li>Image-based crop diagnostic — disease, pests, nutrient deficiency</li>
+              </ul>
+
+            </div><!-- /wide-inner -->
+          </div><!-- /proj-card wide -->
+
+
+          <!-- // 002 — Sidekik -->
+          <div class="proj-card alt">
+            <div class="proj-num">// 002</div>
+            <h3 class="proj-title">Sidekik</h3>
+            <p class="proj-sub">freelance platform · nlp matching · jan–apr 2025</p>
+            <p class="proj-desc">
+              Full-stack freelancing platform with an NLP-powered ANN
+              recommendation engine using FAISS and Annoy for semantic
+              freelancer–client matching.
+            </p>
+            <div class="proj-stack">
+              <span class="stag">flask</span>
+              <span class="stag">react</span>
+              <span class="stag">supabase</span>
+              <span class="stag">faiss</span>
+              <span class="stag">annoy</span>
+              <span class="stag">nlp</span>
+            </div>
+            <a href="https://github.com/triumph10" class="proj-link" target="_blank">github →</a>
+          </div>
+
+
+          <!-- // 003 — Mood Tracker -->
+          <div class="proj-card alt">
+            <div class="proj-num">// 003</div>
+            <h3 class="proj-title">Mood Tracker</h3>
+            <p class="proj-sub">lstm · emotion prediction · jul–oct 2024</p>
+            <p class="proj-desc">
+              Emotion prediction using an LSTM model with activity recommendations,
+              a Gemini API chatbot, and a personal diary feature.
+              Deployed via Streamlit.
+            </p>
+            <div class="proj-stack">
+              <span class="stag">tensorflow</span>
+              <span class="stag">lstm</span>
+              <span class="stag">streamlit</span>
+              <span class="stag">mysql</span>
+              <span class="stag">gemini api</span>
+            </div>
+            <a href="https://github.com/triumph10" class="proj-link" target="_blank">github →</a>
+          </div>
+
+        </div><!-- /proj-grid -->
+      </div><!-- /fi -->
+    </section>
+
+
+    <!-- ============================================================
+         SKILLS
+         Four rows: languages · ml/data · frameworks · core
+         ============================================================ -->
+    <section class="section" id="skills">
+      <div class="sec-label">skills</div>
+      <div class="skills-table fi">
+        <div class="skill-row">
+          <span class="skill-cat">languages</span>
+          <span class="skill-vals">Python, JavaScript, Java, C, SQL</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">ml / data</span>
+          <span class="skill-vals">TensorFlow, Keras, NLP, pandas, NumPy, Matplotlib</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">frameworks</span>
+          <span class="skill-vals">Flask, React, Streamlit, FAISS, Annoy, Supabase</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">core</span>
+          <span class="skill-vals">DSA, OOP, DBMS, REST APIs, Git</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CERTIFICATIONS
+         ============================================================ -->
+    <section class="section alt" id="certs">
+      <div class="sec-label">certifications</div>
+      <div class="certs-wrap fi">
+
+        <div class="cert-item">
+          <div>
+            <div class="cert-name-t">Generative AI</div>
+            <div class="cert-from">Google Cloud · AICTE</div>
+          </div>
+          <div class="cert-yr">2024</div>
+        </div>
+
+        <div class="cert-item">
+          <div>
+            <div class="cert-name-t">Google AI / ML</div>
+            <div class="cert-from">Google Cloud · AICTE</div>
+          </div>
+          <div class="cert-yr">2024</div>
+        </div>
+
+        <div class="cert-item">
+          <div>
+            <div class="cert-name-t">Data Science Methodology</div>
+            <div class="cert-from">IBM · Cognitive Class</div>
+          </div>
+          <div class="cert-yr">2024</div>
+        </div>
+
+        <div class="cert-item">
+          <div>
+            <div class="cert-name-t">AWS Data Engineering</div>
+            <div class="cert-from">Amazon Web Services · AICTE</div>
+          </div>
+          <div class="cert-yr">2024</div>
+        </div>
+
+      </div><!-- /certs-wrap -->
+    </section>
+
+
+    <!-- ============================================================
+         GITHUB — contribution graph only
+         ============================================================ -->
+    <section class="section" id="github">
+      <div class="sec-label">github</div>
+      <div class="fi">
+        <div class="gh-label">triumph10 · contribution activity</div>
+        <div class="gh-graph">
+          <img
+            src="https://ghchart.ssh.surf/triumph10"
+            alt="GitHub Contribution Graph"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         EDUCATION
+         Structured tags instead of prose — second-last section.
+         ============================================================ -->
+    <section class="section alt" id="education">
+      <div class="sec-label">education</div>
+      <div class="fi">
+        <div class="edu-block">
+          <div class="edu-degree">B.E. Computer Science &amp; Engineering (Data Science)</div>
+          <div class="edu-school">University of Mumbai · 2022 — 2026</div>
+          <div class="edu-meta">
+            <span class="edu-tag">honours · ai/ml</span>
+            <span class="edu-tag">final year</span>
+            <span class="edu-tag">graduating 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT
+         Sarcastic sub-line under the heading.
+         ============================================================ -->
+    <section class="section" id="contact">
+      <div class="fi">
+        <h2 class="contact-head">
+          connect<br><span>with me</span>
+        </h2>
+
+        <!-- Sarcastic line — because obviously you need more ways to find him -->
+        
+
+        <div class="contact-links">
+
+          <a href="mailto:siddeshpatil020@gmail.com" class="c-link">
+            <div>
+              <div class="c-name">email</div>
+              <div class="c-handle">siddeshpatil020@gmail.com</div>
+            </div>
+            <span class="c-arr">↗</span>
+          </a>
+
+          <a href="https://github.com/triumph10" class="c-link" target="_blank">
+            <div>
+              <div class="c-name">github</div>
+              <div class="c-handle">triumph10</div>
+            </div>
+            <span class="c-arr">↗</span>
+          </a>
+
+          <a href="https://linkedin.com/in/siddesh-patil-165265258/" class="c-link" target="_blank">
+            <div>
+              <div class="c-name">linkedin</div>
+              <div class="c-handle">siddesh-patil-165265258</div>
+            </div>
+            <span class="c-arr">↗</span>
+          </a>
+
+        </div><!-- /contact-links -->
+      </div><!-- /fi -->
+    </section>
+
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <p>© 2025 <span>Siddesh Patil</span></p>
+      <p>triumph10</p>
+    </footer>
+
+  </div><!-- /main -->
+
+  <!-- ── SCRIPTS — loaded at end of body ── -->
+  <script src="main.js"></script>
+
+</body>
+</html>
