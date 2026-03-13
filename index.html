@@ -35,7 +35,7 @@
 
     <!-- ── NAVIGATION ── -->
     <nav id="navbar">
-      <a href="#" class="nav-id">cdesh</a>
+      <a href="#" class="nav-id">SIDDESH</a>
       <ul class="nav-links">
         <li><a href="#projects">projects</a></li>
         <li><a href="#skills">skills</a></li>
@@ -47,13 +47,17 @@
 
     <!-- ============================================================
          HERO
-         Name animates from "cdesh patil" → "siddesh patil"
-         via split-flap effect triggered after loader completes.
+         main.js immediately renders "Cdesh Patil" into #heroName
+         on script load. After loader completes it flips to
+         "Siddesh Patil" with a split-flap scramble effect.
+
+         NOTE: hero-inner does NOT have .fi — it must be visible
+         immediately when #main fades in so the name is readable.
          ============================================================ -->
     <section id="hero">
-      <div class="hero-inner fi" id="heroInner">
+      <div class="hero-inner" id="heroInner">
 
-        <!-- Name container — populated by main.js startNameFlip() -->
+        <!-- Name container — pre-filled by main.js buildSlots() on load -->
         <div class="hero-name-wrap">
           <div class="hero-name" id="heroName"></div>
         </div>
@@ -98,7 +102,7 @@
               <!-- Left: description + stack -->
               <div>
                 <div class="proj-num">// 001</div>
-                <span class="proj-wip">● in progress — final year</span>
+                <!--<span class="proj-wip">● in progress — final year</span> -->
                 <h3 class="proj-title">SoilStream</h3>
                 <p class="proj-sub">aiot · precision agriculture · solar-powered</p>
                 <p class="proj-desc">
@@ -153,10 +157,10 @@
           <!-- // 003 — Mood Tracker -->
           <div class="proj-card alt">
             <div class="proj-num">// 003</div>
-            <h3 class="proj-title">Mood Tracker</h3>
-            <p class="proj-sub">lstm · emotion prediction · jul–oct 2024</p>
+            <h3 class="proj-title">NeuroAI</h3>
+            <p class="proj-sub">bilstm · emotion prediction · jul–oct 2024</p>
             <p class="proj-desc">
-              Emotion prediction using an LSTM model with activity recommendations,
+              Emotion prediction using an BiLSTM model with activity recommendations,
               a Gemini API chatbot, and a personal diary feature.
               Deployed via Streamlit.
             </p>
@@ -179,27 +183,37 @@
          SKILLS
          Four rows: languages · ml/data · frameworks · core
          ============================================================ -->
-    <section class="section" id="skills">
-      <div class="sec-label">skills</div>
-      <div class="skills-table fi">
-        <div class="skill-row">
-          <span class="skill-cat">languages</span>
-          <span class="skill-vals">Python, JavaScript, Java, C, SQL</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-cat">ml / data</span>
-          <span class="skill-vals">TensorFlow, Keras, NLP, pandas, NumPy, Matplotlib</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-cat">frameworks</span>
-          <span class="skill-vals">Flask, React, Streamlit, FAISS, Annoy, Supabase</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-cat">core</span>
-          <span class="skill-vals">DSA, OOP, DBMS, REST APIs, Git</span>
-        </div>
-      </div>
-    </section>
+<section class="section" id="skills">
+  <div class="sec-label">skills</div>
+  <div class="skills-table fi">
+
+    <div class="skill-row">
+      <span class="skill-cat">languages</span>
+      <span class="skill-vals">Python, JavaScript, Java, C, SQL</span>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-cat">machine learning</span>
+      <span class="skill-vals">TensorFlow, Keras, NLP</span>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-cat">data science</span>
+      <span class="skill-vals">NumPy, pandas, Matplotlib</span>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-cat">frameworks / tools</span>
+      <span class="skill-vals">Flask, React, Streamlit, FAISS, Annoy, Supabase, Git</span>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-cat">core cs</span>
+      <span class="skill-vals">DSA, OOP, DBMS, REST APIs</span>
+    </div>
+
+  </div>
+</section>
 
 
     <!-- ============================================================
@@ -246,7 +260,9 @@
 
 
     <!-- ============================================================
-         GITHUB — contribution graph only
+         GITHUB — contribution graph only.
+         ghchart.ssh.surf renders a PNG — colour param sets the
+         green dot colour to match the site accent.
          ============================================================ -->
     <section class="section" id="github">
       <div class="sec-label">github</div>
@@ -254,9 +270,8 @@
         <div class="gh-label">triumph10 · contribution activity</div>
         <div class="gh-graph">
           <img
-            src="https://ghchart.ssh.surf/triumph10"
+            src="https://ghchart.rshah.org/3ddc84/triumph10"
             alt="GitHub Contribution Graph"
-            loading="lazy"
           />
         </div>
       </div>
@@ -265,7 +280,7 @@
 
     <!-- ============================================================
          EDUCATION
-         Structured tags instead of prose — second-last section.
+         Structured tags — second-last section.
          ============================================================ -->
     <section class="section alt" id="education">
       <div class="sec-label">education</div>
@@ -274,7 +289,7 @@
           <div class="edu-degree">B.E. Computer Science &amp; Engineering (Data Science)</div>
           <div class="edu-school">University of Mumbai · 2022 — 2026</div>
           <div class="edu-meta">
-            <span class="edu-tag">honours · ai/ml</span>
+            <span class="edu-tag">Honours · AI/ML</span>
             <span class="edu-tag">final year</span>
             <span class="edu-tag">graduating 2026</span>
           </div>
@@ -283,18 +298,11 @@
     </section>
 
 
-    <!-- ============================================================
-         CONTACT
-         Sarcastic sub-line under the heading.
-         ============================================================ -->
     <section class="section" id="contact">
       <div class="fi">
         <h2 class="contact-head">
-          connect<br><span>with me</span>
+          More<br><span>of me.</span>
         </h2>
-
-        <!-- Sarcastic line — because obviously you need more ways to find him -->
-        
 
         <div class="contact-links">
 
@@ -322,6 +330,14 @@
             <span class="c-arr">↗</span>
           </a>
 
+          <a href="https://x.com/sidmoidfunction" class="c-link" target="_blank">
+            <div>
+              <div class="c-name">X</div>
+              <div class="c-handle">sidmoidfunction</div>
+            </div>
+            <span class="c-arr">↗</span>
+          </a>
+
         </div><!-- /contact-links -->
       </div><!-- /fi -->
     </section>
@@ -329,8 +345,8 @@
 
     <!-- ── FOOTER ── -->
     <footer>
-      <p>© 2025 <span>Siddesh Patil</span></p>
-      <p>triumph10</p>
+      <p>© 2026 <span>Siddesh Patil</span></p>
+      <p>cdesh</p>
     </footer>
 
   </div><!-- /main -->

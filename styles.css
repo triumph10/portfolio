@@ -764,6 +764,15 @@ footer span { color: var(--dim); }
   transform: none;
 }
 
+.gh-graph {
+  display: flex;
+  justify-content: center;
+}
+
+.gh-graph img {
+  width: 800px;
+}
+
 
 /* ============================================================
    SCROLLBAR — minimal
