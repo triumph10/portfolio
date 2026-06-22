@@ -6,15 +6,11 @@
 
 /* ============================================================
    1. LOADER — CV DETECTION BOX CANVAS ANIMATION
-   Draws scattered bounding-box corner brackets on a canvas,
-   mimicking an OpenCV / computer-vision object detector.
-   No center square, no scan line — just ambient bg boxes.
    ============================================================ */
 
 const canvas = document.getElementById('lc');
 const ctx    = canvas.getContext('2d');
 
-/* Resize canvas to fill the viewport */
 function resizeCanvas() {
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -22,9 +18,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-/* Generate random detection boxes scattered across the screen.
-   Each box has position, size, opacity, animation speed,
-   a fake confidence score, and a random object label.         */
 const boxes = Array.from({ length: 13 }, () => ({
   x:    Math.random() * .84 + .04,
   y:    Math.random() * .84 + .04,
@@ -41,7 +34,6 @@ const boxes = Array.from({ length: 13 }, () => ({
 let frame = 0;
 let rafId;
 
-/* Draw a single detection box — corner brackets only, no full rect */
 function drawBox(b) {
   const W  = canvas.width;
   const H  = canvas.height;
@@ -56,13 +48,9 @@ function drawBox(b) {
   ctx.lineWidth   = 1.5;
 
   ctx.beginPath();
-  /* top-left */
   ctx.moveTo(x,      y + sz); ctx.lineTo(x,     y    ); ctx.lineTo(x + sz,  y    );
-  /* top-right */
   ctx.moveTo(x+w-sz, y     ); ctx.lineTo(x + w, y    ); ctx.lineTo(x + w,   y+sz );
-  /* bottom-left */
   ctx.moveTo(x,      y+h-sz); ctx.lineTo(x,     y + h); ctx.lineTo(x + sz,  y + h);
-  /* bottom-right */
   ctx.moveTo(x+w-sz, y + h ); ctx.lineTo(x + w, y + h); ctx.lineTo(x + w,   y+h-sz);
   ctx.stroke();
 
@@ -71,7 +59,6 @@ function drawBox(b) {
   ctx.fillText(b.lbl + ' ' + b.conf, x, y - 5);
 }
 
-/* Main render loop — runs while loader is visible */
 function loaderLoop() {
   rafId = requestAnimationFrame(loaderLoop);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,9 +70,6 @@ function loaderLoop() {
 }
 loaderLoop();
 
-/* ── LOADER PROGRESS ──
-   Fake progress increments randomly until 100,
-   then fades out loader and fades in #main.     */
 const lpct = document.getElementById('lpct');
 let pct = 0;
 
@@ -106,7 +90,6 @@ const loadTick = setInterval(() => {
 
       setTimeout(() => {
         loader.style.display = 'none';
-        /* Start the flip AFTER main is visible so user sees Cdesh Patil first */
         startNameFlip();
       }, 700);
     }, 280);
@@ -116,22 +99,10 @@ const loadTick = setInterval(() => {
 
 /* ============================================================
    2. DIGITAL FLIP NAME ANIMATION
-
-   Flow:
-   1. On script load (sync, before loader finishes) — immediately
-      render "Cdesh Patil" into #heroName so it's visible the
-      moment #main fades in.
-   2. After loader completes + 500ms pause — flip each character
-      slot left-to-right to reveal "Siddesh Patil".
-
-   Each character is a .cn slot:
-     .cn-out  — currently visible layer
-     .cn-in   — incoming layer (hidden until flip fires)
-   Spaces are .cn-space width-only elements.
    ============================================================ */
 
-const NAME_FROM = 'Cdesh Patil';    /* shown first — capitalised */
-const NAME_TO   = 'Siddesh Patil';  /* final correct name — capitalised */
+const NAME_FROM = 'Cdesh Patil';
+const NAME_TO   = 'Siddesh Patil';
 
 const SCRAMBLE_CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP0123456789_-';
 
@@ -139,8 +110,6 @@ function randChar() {
   return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
 }
 
-/* Build character slots for a string into a container element.
-   Returns the container's child slot nodes for later flipping. */
 function buildSlots(str, container) {
   container.innerHTML = '';
   str.split('').forEach(ch => {
@@ -168,17 +137,9 @@ function buildSlots(str, container) {
   });
 }
 
-/* ── STEP 1: Render FROM name immediately on page load ──
-   Runs synchronously so "Cdesh Patil" is in the DOM before
-   the loader even finishes. User sees it the instant the
-   page fades in.                                           */
 const nameContainer = document.getElementById('heroName');
 buildSlots(NAME_FROM, nameContainer);
 
-
-/* Flip a single .cn slot to newChar.
-   Scrambles through random chars briefly (split-flap feel),
-   then fires the CSS flipOut/flipIn keyframe animation.     */
 function flipSlot(slot, newChar) {
   const outEl = slot.querySelector('.cn-out');
   const inEl  = slot.querySelector('.cn-in');
@@ -206,12 +167,7 @@ function flipSlot(slot, newChar) {
   }, 60);
 }
 
-/* ── STEP 2: After loader, flip FROM → TO ──
-   Rebuilds container to NAME_TO length, pre-fills outEl chars
-   to approximate NAME_FROM visually (offset by +2 since "Si"
-   is prepended), then fires flips left-to-right 90ms apart.  */
 function startNameFlip() {
-  /* 500ms pause so user clearly reads "Cdesh Patil" first */
   setTimeout(() => {
     const fromArr = NAME_FROM.split('');
     const toChars = NAME_TO.split('');
@@ -231,7 +187,6 @@ function startNameFlip() {
 
         const outEl       = document.createElement('span');
         outEl.className   = 'cn-out';
-        /* Map FROM chars — NAME_TO has "Si" prepended so offset by 2 */
         const fromIdx     = i - 2;
         outEl.textContent = (
           fromIdx >= 0 &&
@@ -251,7 +206,6 @@ function startNameFlip() {
       }
     });
 
-    /* Fire flips left-to-right, 90ms stagger per character */
     let idx = 0;
     slots.forEach((slot, i) => {
       if (!slot) return;
@@ -267,8 +221,8 @@ function startNameFlip() {
 
 /* ============================================================
    3. NAV — SCROLLED STATE
-   Adds .scrolled to nav after 60px, triggering frosted glass.
    ============================================================ */
+
 window.addEventListener('scroll', () => {
   document.getElementById('navbar')
     .classList.toggle('scrolled', window.scrollY > 60);
@@ -277,9 +231,8 @@ window.addEventListener('scroll', () => {
 
 /* ============================================================
    4. SCROLL REVEAL
-   IntersectionObserver adds .in to .fi elements as they enter
-   the viewport, triggering the fade-up CSS transition.
    ============================================================ */
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {

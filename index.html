@@ -1,227 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ── META ── -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Siddesh Patil</title>
-
-  <!-- ── FONTS — Geist (sans) + Geist Mono ── -->
+  <title>Siddesh Patil — ML Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- ── STYLES ── -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ============================================================
-       LOADER
-       Full-screen overlay shown on first visit.
-       Canvas (#lc) hosts the CV-detection box animation (main.js).
-       Fades out once progress hits 100%.
-       ============================================================ -->
   <div id="loader">
     <canvas id="lc"></canvas>
     <div class="l-pct" id="lpct">0%</div>
   </div>
 
-
-  <!-- ============================================================
-       MAIN CONTENT
-       Starts opacity:0, transitions to 1 when loader finishes.
-       ============================================================ -->
   <div id="main">
 
-    <!-- ── NAVIGATION ── -->
+    <!-- NAV -->
     <nav id="navbar">
       <a href="#" class="nav-id">SIDDESH</a>
       <ul class="nav-links">
         <li><a href="#projects">projects</a></li>
         <li><a href="#skills">skills</a></li>
+        <li><a href="#publications">publications</a></li>
         <li><a href="#github">github</a></li>
         <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
 
-
-    <!-- ============================================================
-         HERO
-         main.js immediately renders "Cdesh Patil" into #heroName
-         on script load. After loader completes it flips to
-         "Siddesh Patil" with a split-flap scramble effect.
-
-         NOTE: hero-inner does NOT have .fi — it must be visible
-         immediately when #main fades in so the name is readable.
-         ============================================================ -->
+    <!-- HERO -->
     <section id="hero">
       <div class="hero-inner" id="heroInner">
 
-        <!-- Name container — pre-filled by main.js buildSlots() on load -->
         <div class="hero-name-wrap">
           <div class="hero-name" id="heroName"></div>
         </div>
 
-        <!-- Bio -->
         <p class="hero-desc">
-          building systems at the intersection of
-          <strong>machine learning</strong>,
-          <strong>data pipelines</strong>, and
-          <strong>real-world hardware</strong>.
-          interested in ml, nlp, and model building.
+          building end-to-end intelligent systems —
+          from <strong>IoT sensor pipelines</strong> to
+          <strong>production-grade RAG architectures</strong>.
+          IEEE-published researcher · government-filed patent holder · honours in AI/ML.
         </p>
 
-        <!-- Availability status with pulsing dot -->
         <div class="hero-status">
           <span class="sdot"></span>
           <span>open to opportunities · graduating 2026</span>
         </div>
 
-      </div><!-- /hero-inner -->
-
-      <!-- Scroll nudge -->
+      </div>
       <div class="scroll-hint">scroll</div>
     </section>
 
-
-    <!-- ============================================================
-         PROJECTS
-         Wide card (SoilStream) spans both columns.
-         Two regular cards below it.
-         ============================================================ -->
+    <!-- PROJECTS -->
     <section class="section alt" id="projects">
       <div class="sec-label">projects</div>
 
       <div class="fi">
         <div class="proj-grid">
 
-          <!-- // 001 — SoilStream (wide, in-progress) -->
-          <div class="proj-card wide">
+          <!-- 001 SoilStream — wide flagship -->
+          <div class="proj-card wide flagship">
             <div class="wide-inner">
 
-              <!-- Left: description + stack -->
               <div>
-                <div class="proj-num">// 001</div>
-                <!--<span class="proj-wip">● in progress — final year</span> -->
+                <div class="proj-num-row">
+                  <span class="proj-num">// 001</span>
+                  <div class="proj-badges">
+                    <span class="pbadge ieee">IEEE CONIT 2026</span>
+                    <span class="pbadge patent">Patent · 202621042187</span>
+                    <span class="pbadge copy">© Gov. of India</span>
+                  </div>
+                </div>
+
                 <h3 class="proj-title">SoilStream</h3>
                 <p class="proj-sub">aiot · precision agriculture · solar-powered</p>
                 <p class="proj-desc">
-                  Solar-powered AIoT system for precision agriculture.
-                  Real-time soil monitoring, automated irrigation, and a crop
-                  recommendation engine built to reduce water wastage.
+                  Solar-powered AIoT system for precision agriculture in monsoon-dependent
+                  farming regions. SVR-based rainfall prediction, ResNet50 crop identification,
+                  and a conservative rule-based irrigation controller that only runs the pump
+                  when all three conditions — soil moisture, rainfall forecast, and crop health
+                  — agree.
                 </p>
+
+                <div class="proj-metrics">
+                  <div class="metric">
+                    <span class="metric-val">92.86%</span>
+                    <span class="metric-lbl">rainfall accuracy</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-val">99.7%</span>
+                    <span class="metric-lbl">crop identification</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-val">0.93</span>
+                    <span class="metric-lbl">svr precision</span>
+                  </div>
+                </div>
+
                 <div class="proj-stack">
                   <span class="stag">python</span>
-                  <span class="stag">ml</span>
-                  <span class="stag">iot</span>
-                  <span class="stag">rest api</span>
-                  <span class="stag">image analysis</span>
+                  <span class="stag">tensorflow</span>
+                  <span class="stag">svr</span>
+                  <span class="stag">resnet50</span>
+                  <span class="stag">esp32</span>
+                  <span class="stag">firebase</span>
+                  <span class="stag">react native</span>
+                  <span class="stag">flask</span>
+                  <span class="stag">lightgbm</span>
                 </div>
+
+                <a href="https://github.com/triumph10/SoilStream" class="proj-link" target="_blank">github →</a>
               </div>
 
-              <!-- Right: feature list -->
               <ul class="proj-feats">
-                <li>Real-time monitoring of soil moisture, temperature, humidity</li>
-                <li>Automated irrigation using precision control</li>
-                <li>ML model for rainfall probability — historical + live weather data</li>
-                <li>API-based recommendation engine for fertilizer, pH correction</li>
-                <li>Image-based crop diagnostic — disease, pests, nutrient deficiency</li>
+                <li>SVR rainfall model outperformed LightGBM and GRU on Konkan coastal dataset — chosen for highest precision, not just accuracy</li>
+                <li>ResNet50 multi-class crop classifier at 99.7% test accuracy; EfficientNetB0 overfit catastrophically at 16% test accuracy despite 99.7% val — correctly diagnosed and discarded</li>
+                <li>Irrigation controller only activates when soil moisture is low, rainfall probability is below 60%, and no active disease is detected — three-gate logic</li>
+                <li>ESP32 + BME280 pipeline syncing to Firebase Realtime Database every 5 seconds, running entirely off solar and Li-ion battery</li>
+                <li>React Native app with live sensor dashboard, manual pump override, and Kindwise API-powered disease diagnosis from leaf photos</li>
               </ul>
 
-            </div><!-- /wide-inner -->
-          </div><!-- /proj-card wide -->
-
-
-          <!-- // 002 — Sidekik -->
-          <div class="proj-card alt">
-            <div class="proj-num">// 002</div>
-            <h3 class="proj-title">Sidekik</h3>
-            <p class="proj-sub">freelance platform · nlp matching · jan–apr 2025</p>
-            <p class="proj-desc">
-              Full-stack freelancing platform with an NLP-powered ANN
-              recommendation engine using FAISS and Annoy for semantic
-              freelancer–client matching.
-            </p>
-            <div class="proj-stack">
-              <span class="stag">flask</span>
-              <span class="stag">react</span>
-              <span class="stag">supabase</span>
-              <span class="stag">faiss</span>
-              <span class="stag">annoy</span>
-              <span class="stag">nlp</span>
             </div>
-            <a href="https://github.com/triumph10" class="proj-link" target="_blank">github →</a>
           </div>
 
+          <!-- 002 VeriDoc -->
+          <div class="proj-card alt">
+            <div class="proj-num">// 002</div>
+            <h3 class="proj-title">VeriDoc</h3>
+            <p class="proj-sub">hybrid rag · retrieval · evaluation · 2026</p>
+            <p class="proj-desc">
+              Production-grade RAG pipeline combining dense and sparse retrieval
+              over local PDFs. Reciprocal Rank Fusion + cross-encoder reranking
+              with automated RAGAS evaluation using synthetic QA generation.
+            </p>
 
-          <!-- // 003 — Mood Tracker -->
+            <div class="proj-metrics">
+              <div class="metric">
+                <span class="metric-val">1.0</span>
+                <span class="metric-lbl">faithfulness</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">1.0</span>
+                <span class="metric-lbl">ctx precision</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">0.89</span>
+                <span class="metric-lbl">answer relevancy</span>
+              </div>
+            </div>
+
+            <div class="proj-stack">
+              <span class="stag">faiss</span>
+              <span class="stag">bm25</span>
+              <span class="stag">sentence-transformers</span>
+              <span class="stag">mistral</span>
+              <span class="stag">mlflow</span>
+              <span class="stag">ragas</span>
+              <span class="stag">gradio</span>
+            </div>
+
+            <a href="https://github.com/triumph10/VeriDoc" class="proj-link" target="_blank">github →</a>
+          </div>
+
+          <!-- 003 Sidekik -->
           <div class="proj-card alt">
             <div class="proj-num">// 003</div>
+            <h3 class="proj-title">Sidekik</h3>
+            <p class="proj-sub">bert matching · semantic search · jan–apr 2025</p>
+            <p class="proj-desc">
+              Freelancing platform with a BERT + FAISS recommendation engine
+              for semantic freelancer-project matching. 22-point precision improvement
+              over TF-IDF across 10,000 profiles and 7,000 project records.
+            </p>
+
+            <div class="proj-metrics">
+              <div class="metric">
+                <span class="metric-val">94%</span>
+                <span class="metric-lbl">precision</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">92%</span>
+                <span class="metric-lbl">f1 score</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">10k</span>
+                <span class="metric-lbl">profiles</span>
+              </div>
+            </div>
+
+            <div class="proj-stack">
+              <span class="stag">bert</span>
+              <span class="stag">faiss</span>
+              <span class="stag">flask</span>
+              <span class="stag">react</span>
+              <span class="stag">elasticsearch</span>
+              <span class="stag">supabase</span>
+              <span class="stag">postgresql</span>
+            </div>
+
+            <a href="https://github.com/triumph10/Sidekik" class="proj-link" target="_blank">github →</a>
+          </div>
+
+          <!-- 004 NeuroAI -->
+          <div class="proj-card alt">
+            <div class="proj-num">// 004</div>
             <h3 class="proj-title">NeuroAI</h3>
             <p class="proj-sub">bilstm · emotion prediction · jul–oct 2024</p>
             <p class="proj-desc">
-              Emotion prediction using an BiLSTM model with activity recommendations,
-              a Gemini API chatbot, and a personal diary feature.
-              Deployed via Streamlit.
+              Emotion prediction using a BiLSTM model with activity recommendations,
+              a Gemini API conversational layer, and a personal diary feature.
+              Deployed and accessible via Streamlit.
             </p>
+
             <div class="proj-stack">
               <span class="stag">tensorflow</span>
-              <span class="stag">lstm</span>
+              <span class="stag">bilstm</span>
+              <span class="stag">gemini api</span>
               <span class="stag">streamlit</span>
               <span class="stag">mysql</span>
-              <span class="stag">gemini api</span>
+              <span class="stag">python</span>
             </div>
+
             <a href="https://github.com/triumph10" class="proj-link" target="_blank">github →</a>
           </div>
 
-        </div><!-- /proj-grid -->
-      </div><!-- /fi -->
+          <!-- 005 AWS Cloud -->
+          <div class="proj-card alt">
+            <div class="proj-num">// 005</div>
+            <h3 class="proj-title">AWS Cloud</h3>
+            <p class="proj-sub">s3 · ec2 · cloudfront · 2026 · ongoing</p>
+            <p class="proj-desc">
+              Hands-on AWS deployments on free tier. Static site with CloudFront CDN
+              and an ML inference API running on a live EC2 instance — learning cloud
+              by shipping things.
+            </p>
+
+            <div class="proj-stack">
+              <span class="stag">aws s3</span>
+              <span class="stag">cloudfront</span>
+              <span class="stag">ec2</span>
+              <span class="stag">fastapi</span>
+              <span class="stag">linux</span>
+              <span class="stag">python</span>
+            </div>
+
+            <a href="https://github.com/triumph10/cloud-miniprojects" class="proj-link" target="_blank">github →</a>
+          </div>
+
+        </div>
+      </div>
     </section>
 
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="sec-label">skills</div>
+      <div class="skills-table fi">
 
-    <!-- ============================================================
-         SKILLS
-         Four rows: languages · ml/data · frameworks · core
-         ============================================================ -->
-<section class="section" id="skills">
-  <div class="sec-label">skills</div>
-  <div class="skills-table fi">
+        <div class="skill-row">
+          <span class="skill-cat">languages</span>
+          <span class="skill-vals">Python, SQL, JavaScript, Java, C</span>
+        </div>
 
-    <div class="skill-row">
-      <span class="skill-cat">languages</span>
-      <span class="skill-vals">Python, JavaScript, Java, C, SQL</span>
-    </div>
+        <div class="skill-row">
+          <span class="skill-cat">ai / ml</span>
+          <span class="skill-vals">TensorFlow, Keras, BERT, SVR, ResNet50, LightGBM, BiLSTM</span>
+        </div>
 
-    <div class="skill-row">
-      <span class="skill-cat">machine learning</span>
-      <span class="skill-vals">TensorFlow, Keras, NLP</span>
-    </div>
+        <div class="skill-row">
+          <span class="skill-cat">nlp & retrieval</span>
+          <span class="skill-vals">FAISS, BM25, Sentence-Transformers, RAG, RAGAS, Elasticsearch</span>
+        </div>
 
-    <div class="skill-row">
-      <span class="skill-cat">data science</span>
-      <span class="skill-vals">NumPy, pandas, Matplotlib</span>
-    </div>
+        <div class="skill-row">
+          <span class="skill-cat">data science</span>
+          <span class="skill-vals">pandas, NumPy, Matplotlib, MLflow</span>
+        </div>
 
-    <div class="skill-row">
-      <span class="skill-cat">frameworks / tools</span>
-      <span class="skill-vals">Flask, React, Streamlit, FAISS, Annoy, Supabase, Git</span>
-    </div>
+        <div class="skill-row">
+          <span class="skill-cat">frameworks</span>
+          <span class="skill-vals">Flask, FastAPI, React, Streamlit, Gradio</span>
+        </div>
 
-    <div class="skill-row">
-      <span class="skill-cat">core cs</span>
-      <span class="skill-vals">DSA, OOP, DBMS, REST APIs</span>
-    </div>
+        <div class="skill-row">
+          <span class="skill-cat">cloud & infra</span>
+          <span class="skill-vals">AWS (S3, EC2, CloudFront), Google Cloud, Firebase, Supabase, Git</span>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
-
-    <!-- ============================================================
-         CERTIFICATIONS
-         ============================================================ -->
+    <!-- CERTIFICATIONS -->
     <section class="section alt" id="certs">
       <div class="sec-label">certifications</div>
       <div class="certs-wrap fi">
+
+        <div class="cert-item">
+          <div>
+            <div class="cert-name-t">AWS Data Engineering</div>
+            <div class="cert-from">Amazon Web Services · AICTE</div>
+          </div>
+          <div class="cert-yr">2024</div>
+        </div>
 
         <div class="cert-item">
           <div>
@@ -247,24 +328,48 @@
           <div class="cert-yr">2024</div>
         </div>
 
-        <div class="cert-item">
-          <div>
-            <div class="cert-name-t">AWS Data Engineering</div>
-            <div class="cert-from">Amazon Web Services · AICTE</div>
-          </div>
-          <div class="cert-yr">2024</div>
-        </div>
-
-      </div><!-- /certs-wrap -->
+      </div>
     </section>
 
+    <!-- PUBLICATIONS & IP -->
+    <section class="section" id="publications">
+      <div class="sec-label">publications & ip</div>
+      <div class="fi">
+        <div class="pub-list">
 
-    <!-- ============================================================
-         GITHUB — contribution graph only.
-         ghchart.ssh.surf renders a PNG — colour param sets the
-         green dot colour to match the site accent.
-         ============================================================ -->
-    <section class="section" id="github">
+          <div class="pub-item">
+            <div class="pub-tag-row">
+              <span class="pbadge ieee">IEEE CONIT 2026</span>
+              <span class="pub-id">Paper ID · 960</span>
+            </div>
+            <div class="pub-title">A Solar-Powered AIoT-Based System for Intelligent Soil Monitoring and Automated Irrigation Control</div>
+            <div class="pub-meta">KLE Institute of Technology, Hubballi · Accepted for presentation and publication in conference proceedings</div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-tag-row">
+              <span class="pbadge patent">Patent</span>
+              <span class="pub-id">App. No · 202621042187</span>
+            </div>
+            <div class="pub-title">Smart Solar-Powered AIoT System for Precision Agriculture (SoilStream)</div>
+            <div class="pub-meta">Intellectual Property India · Government of India</div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-tag-row">
+              <span class="pbadge copy">Copyright</span>
+              <span class="pub-id">Reg. No · SW-13522/2026-CO</span>
+            </div>
+            <div class="pub-title">SoilStream — Registered Software Work</div>
+            <div class="pub-meta">Copyright Office · Government of India</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB -->
+    <section class="section alt" id="github">
       <div class="sec-label">github</div>
       <div class="fi">
         <div class="gh-label">triumph10 · contribution activity</div>
@@ -277,12 +382,8 @@
       </div>
     </section>
 
-
-    <!-- ============================================================
-         EDUCATION
-         Structured tags — second-last section.
-         ============================================================ -->
-    <section class="section alt" id="education">
+    <!-- EDUCATION -->
+    <section class="section" id="education">
       <div class="sec-label">education</div>
       <div class="fi">
         <div class="edu-block">
@@ -290,15 +391,15 @@
           <div class="edu-school">University of Mumbai · 2022 — 2026</div>
           <div class="edu-meta">
             <span class="edu-tag">Honours · AI/ML</span>
-            <span class="edu-tag">final year</span>
+            <span class="edu-tag">A.P. Shah Institute of Technology</span>
             <span class="edu-tag">graduating 2026</span>
           </div>
         </div>
       </div>
     </section>
 
-
-    <section class="section" id="contact">
+    <!-- CONTACT -->
+    <section class="section alt" id="contact">
       <div class="fi">
         <h2 class="contact-head">
           More<br><span>of me.</span>
@@ -338,21 +439,17 @@
             <span class="c-arr">↗</span>
           </a>
 
-        </div><!-- /contact-links -->
-      </div><!-- /fi -->
+        </div>
+      </div>
     </section>
 
-
-    <!-- ── FOOTER ── -->
     <footer>
       <p>© 2026 <span>Siddesh Patil</span></p>
       <p>cdesh</p>
     </footer>
 
-  </div><!-- /main -->
+  </div>
 
-  <!-- ── SCRIPTS — loaded at end of body ── -->
   <script src="main.js"></script>
-
 </body>
 </html>
