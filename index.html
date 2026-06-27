@@ -7,55 +7,87 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light') document.documentElement.classList.add('light');
+    })();
+  </script>
 </head>
 <body>
 
-  <div id="loader">
-    <canvas id="lc"></canvas>
-    <div class="l-pct" id="lpct">0%</div>
-  </div>
-
-  <div id="main">
+  <div id="main" class="visible">
 
     <!-- NAV -->
     <nav id="navbar">
-      <a href="#" class="nav-id">SIDDESH</a>
+      <div class="nav-inner">
+      <a href="#" class="nav-id">Siddesh</a>
       <ul class="nav-links">
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#skills">skills</a></li>
-        <li><a href="#publications">publications</a></li>
-        <li><a href="#github">github</a></li>
-        <li><a href="#contact">contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="Siddesh_Patil_Resume.pdf" target="_blank">Resume</a></li>
       </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.4 19.6L6 18M18 6l1.6-1.6"/></svg>
+      </button>
+      </div>
     </nav>
 
     <!-- HERO -->
     <section id="hero">
-      <div class="hero-inner" id="heroInner">
+      <div class="hero-inner">
 
-        <div class="hero-name-wrap">
-          <div class="hero-name" id="heroName"></div>
+        <div class="orbit">
+          <div class="orbit-ring"></div>
+          <a href="https://github.com/triumph10" target="_blank" class="orbit-icon pos-top" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.72-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.78 1.07.78 2.15 0 1.56-.01 2.81-.01 3.19 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <a href="https://x.com/sidmoidfunction" target="_blank" class="orbit-icon pos-top-right" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.2-6.8-5.95 6.8H1.7l7.73-8.84L1.27 2.25h6.82l4.7 6.21 5.45-6.21zm-1.16 17.52h1.83L7.04 4.13H5.08l12 15.64z"/></svg>
+          </a>
+          <a href="https://in.pinterest.com/siddxesh/" target="_blank" class="orbit-icon pos-top-left" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 4.87 3 9.03 7.25 10.77-.1-.92-.19-2.33.04-3.33.21-.9 1.35-5.74 1.35-5.74s-.34-.69-.34-1.7c0-1.6.92-2.79 2.07-2.79.98 0 1.45.73 1.45 1.61 0 .98-.63 2.45-.95 3.81-.27 1.14.57 2.07 1.69 2.07 2.03 0 3.59-2.14 3.59-5.23 0-2.74-1.96-4.65-4.77-4.65-3.25 0-5.16 2.44-5.16 4.96 0 .98.38 2.03.85 2.6.09.11.11.21.08.32-.09.37-.29 1.14-.33 1.31-.05.21-.17.26-.39.16-1.46-.68-2.37-2.8-2.37-4.51 0-3.67 2.67-7.04 7.69-7.04 4.04 0 7.18 2.88 7.18 6.72 0 4.01-2.53 7.24-6.04 7.24-1.18 0-2.29-.61-2.67-1.34 0 0-.58 2.23-.72 2.77-.26 1.01-.97 2.27-1.44 3.04A11.5 11.5 0 0 0 12 23.5c6.35 0 11.5-5.15 11.5-11.5S18.35.5 12 .5z"/></svg>
+          </a>
+          <a href="https://discord.com/users/triumph.10" target="_blank" class="orbit-icon pos-bottom-left" aria-label="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.53 13.6 13.6 0 0 0-.62 1.27 18.3 18.3 0 0 0-5.5 0 13.6 13.6 0 0 0-.62-1.27 19.8 19.8 0 0 0-4.93 1.53C.96 8.06.2 11.66.5 15.2a19.9 19.9 0 0 0 6 3.03c.48-.66.91-1.36 1.27-2.1a13 13 0 0 1-2-.96c.17-.12.33-.25.49-.38a14.2 14.2 0 0 0 12.04 0c.16.13.32.26.49.38-.63.37-1.3.69-2 .96.36.74.79 1.44 1.27 2.1a19.9 19.9 0 0 0 6-3.03c.36-4.1-.65-7.66-2.74-10.83zM8.68 13.4c-.81 0-1.47-.75-1.47-1.67 0-.92.65-1.67 1.47-1.67.83 0 1.49.76 1.47 1.67 0 .92-.64 1.67-1.47 1.67zm6.64 0c-.81 0-1.47-.75-1.47-1.67 0-.92.65-1.67 1.47-1.67.83 0 1.49.76 1.47 1.67 0 .92-.64 1.67-1.47 1.67z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/siddesh-patil-165265258/" target="_blank" class="orbit-icon pos-bottom-right" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <div class="orbit-avatar">
+            <img src="image.png" alt="Siddesh Patil" id="avatarImg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="avatar-fallback">SP</span>
+          </div>
         </div>
 
+        <h1 class="hero-name">Siddesh Patil</h1>
+
+        <p class="hero-role">
+          <span>Engineer</span><span class="rdot">·</span><span>ML &amp; Data</span><span class="rdot">·</span>
+          <a href="mailto:siddeshpatil020@gmail.com">siddeshpatil020@gmail.com</a>
+        </p>
+
         <p class="hero-desc">
-          building end-to-end intelligent systems —
-          from <strong>IoT sensor pipelines</strong> to
-          <strong>production-grade RAG architectures</strong>.
-          IEEE-published researcher · government-filed patent holder · honours in AI/ML.
+          Building systems at the intersection of machine learning, data pipelines,
+          and real-world hardware. Final-year engineering student, graduating 2026.
         </p>
 
         <div class="hero-status">
           <span class="sdot"></span>
-          <span>open to opportunities · graduating 2026</span>
+          <span>Open to opportunities</span>
         </div>
 
       </div>
-      <div class="scroll-hint">scroll</div>
     </section>
 
     <!-- PROJECTS -->
-    <section class="section alt" id="projects">
-      <div class="sec-label">projects</div>
+    <section class="section" id="projects">
+      <div class="section-inner">
+      <div class="sec-label">Projects</div>
 
       <div class="fi">
         <div class="proj-grid">
@@ -251,11 +283,35 @@
 
         </div>
       </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section" id="blog">
+      <div class="section-inner">
+      <div class="sec-label">Blog</div>
+      <div class="blog-list fi">
+
+        <a href="#" class="blog-item">
+          <div class="blog-item-main">
+            <h3 class="blog-title">Building SoilStream — lessons from a solar-powered AIoT system</h3>
+            <p class="blog-excerpt">
+              Notes from designing a rainfall-prediction and irrigation-control pipeline for
+              monsoon-dependent farms — model choices, sensor failures, and what actually
+              shipped versus what stayed on the whiteboard.
+            </p>
+          </div>
+          <span class="blog-arr">Read more →</span>
+        </a>
+
+      </div>
+      </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section" id="skills">
-      <div class="sec-label">skills</div>
+      <div class="section-inner">
+      <div class="sec-label">Skills</div>
       <div class="skills-table fi">
 
         <div class="skill-row">
@@ -289,11 +345,13 @@
         </div>
 
       </div>
+      </div>
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section class="section alt" id="certs">
-      <div class="sec-label">certifications</div>
+    <section class="section" id="certs">
+      <div class="section-inner">
+      <div class="sec-label">Certifications</div>
       <div class="certs-wrap fi">
 
         <div class="cert-item">
@@ -329,11 +387,13 @@
         </div>
 
       </div>
+      </div>
     </section>
 
     <!-- PUBLICATIONS & IP -->
     <section class="section" id="publications">
-      <div class="sec-label">publications & ip</div>
+      <div class="section-inner">
+      <div class="sec-label">Publications &amp; IP</div>
       <div class="fi">
         <div class="pub-list">
 
@@ -366,25 +426,29 @@
 
         </div>
       </div>
+      </div>
     </section>
 
     <!-- GITHUB -->
-    <section class="section alt" id="github">
-      <div class="sec-label">github</div>
+    <section class="section" id="github">
+      <div class="section-inner">
+      <div class="sec-label">GitHub</div>
       <div class="fi">
-        <div class="gh-label">triumph10 · contribution activity</div>
+        <div class="gh-label">triumph10 — contribution activity</div>
         <div class="gh-graph">
           <img
-            src="https://ghchart.rshah.org/3ddc84/triumph10"
+            src="https://ghchart.rshah.org/b14dff/triumph10"
             alt="GitHub Contribution Graph"
           />
         </div>
+      </div>
       </div>
     </section>
 
     <!-- EDUCATION -->
     <section class="section" id="education">
-      <div class="sec-label">education</div>
+      <div class="section-inner">
+      <div class="sec-label">Education</div>
       <div class="fi">
         <div class="edu-block">
           <div class="edu-degree">B.E. Computer Science &amp; Engineering (Data Science)</div>
@@ -392,60 +456,30 @@
           <div class="edu-meta">
             <span class="edu-tag">Honours · AI/ML</span>
             <span class="edu-tag">A.P. Shah Institute of Technology</span>
-            <span class="edu-tag">graduating 2026</span>
+            <span class="edu-tag">Graduating 2026</span>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section alt" id="contact">
-      <div class="fi">
-        <h2 class="contact-head">
-          More<br><span>of me.</span>
-        </h2>
-
-        <div class="contact-links">
-
-          <a href="mailto:siddeshpatil020@gmail.com" class="c-link">
-            <div>
-              <div class="c-name">email</div>
-              <div class="c-handle">siddeshpatil020@gmail.com</div>
-            </div>
-            <span class="c-arr">↗</span>
-          </a>
-
-          <a href="https://github.com/triumph10" class="c-link" target="_blank">
-            <div>
-              <div class="c-name">github</div>
-              <div class="c-handle">triumph10</div>
-            </div>
-            <span class="c-arr">↗</span>
-          </a>
-
-          <a href="https://linkedin.com/in/siddesh-patil-165265258/" class="c-link" target="_blank">
-            <div>
-              <div class="c-name">linkedin</div>
-              <div class="c-handle">siddesh-patil-165265258</div>
-            </div>
-            <span class="c-arr">↗</span>
-          </a>
-
-          <a href="https://x.com/sidmoidfunction" class="c-link" target="_blank">
-            <div>
-              <div class="c-name">X</div>
-              <div class="c-handle">sidmoidfunction</div>
-            </div>
-            <span class="c-arr">↗</span>
-          </a>
-
-        </div>
+    <section class="section" id="contact">
+      <div class="section-inner">
+      <div class="fi contact-block">
+        <h2 class="contact-head">Let's build something.</h2>
+        <p class="contact-line">
+          Open to opportunities in AI/ML engineering, data science, or cloud-adjacent roles.
+          Reach out at <a href="mailto:siddeshpatil020@gmail.com" class="contact-email">siddeshpatil020@gmail.com</a>.
+        </p>
+      </div>
       </div>
     </section>
 
     <footer>
-      <p>© 2026 <span>Siddesh Patil</span></p>
-      <p>cdesh</p>
+      <div class="footer-inner">
+        <p>© 2026 <span>Siddesh Patil</span></p>
+      </div>
     </footer>
 
   </div>
