@@ -1,489 +1,356 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Siddesh Patil — ML Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    (function() {
-      var saved = localStorage.getItem('theme');
-      if (saved === 'light') document.documentElement.classList.add('light');
-    })();
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siddesh Patil — ML & Data Engineer</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="main" class="visible">
-
-    <!-- NAV -->
-    <nav id="navbar">
-      <div class="nav-inner">
-      <a href="#" class="nav-id">Siddesh</a>
-      <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#github">GitHub</a></li>
-        <li><a href="Siddesh_Patil_Resume.pdf" target="_blank">Resume</a></li>
-      </ul>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.4 19.6L6 18M18 6l1.6-1.6"/></svg>
-      </button>
-      </div>
-    </nav>
-
-    <!-- HERO -->
-    <section id="hero">
-      <div class="hero-inner">
-
-        <div class="orbit">
-          <div class="orbit-ring"></div>
-          <a href="https://github.com/triumph10" target="_blank" class="orbit-icon pos-top" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.72-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.78 1.07.78 2.15 0 1.56-.01 2.81-.01 3.19 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-          </a>
-          <a href="https://x.com/sidmoidfunction" target="_blank" class="orbit-icon pos-top-right" aria-label="X">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.2-6.8-5.95 6.8H1.7l7.73-8.84L1.27 2.25h6.82l4.7 6.21 5.45-6.21zm-1.16 17.52h1.83L7.04 4.13H5.08l12 15.64z"/></svg>
-          </a>
-          <a href="https://in.pinterest.com/siddxesh/" target="_blank" class="orbit-icon pos-top-left" aria-label="Pinterest">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 4.87 3 9.03 7.25 10.77-.1-.92-.19-2.33.04-3.33.21-.9 1.35-5.74 1.35-5.74s-.34-.69-.34-1.7c0-1.6.92-2.79 2.07-2.79.98 0 1.45.73 1.45 1.61 0 .98-.63 2.45-.95 3.81-.27 1.14.57 2.07 1.69 2.07 2.03 0 3.59-2.14 3.59-5.23 0-2.74-1.96-4.65-4.77-4.65-3.25 0-5.16 2.44-5.16 4.96 0 .98.38 2.03.85 2.6.09.11.11.21.08.32-.09.37-.29 1.14-.33 1.31-.05.21-.17.26-.39.16-1.46-.68-2.37-2.8-2.37-4.51 0-3.67 2.67-7.04 7.69-7.04 4.04 0 7.18 2.88 7.18 6.72 0 4.01-2.53 7.24-6.04 7.24-1.18 0-2.29-.61-2.67-1.34 0 0-.58 2.23-.72 2.77-.26 1.01-.97 2.27-1.44 3.04A11.5 11.5 0 0 0 12 23.5c6.35 0 11.5-5.15 11.5-11.5S18.35.5 12 .5z"/></svg>
-          </a>
-          <a href="https://discord.com/users/triumph.10" target="_blank" class="orbit-icon pos-bottom-left" aria-label="Discord">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.53 13.6 13.6 0 0 0-.62 1.27 18.3 18.3 0 0 0-5.5 0 13.6 13.6 0 0 0-.62-1.27 19.8 19.8 0 0 0-4.93 1.53C.96 8.06.2 11.66.5 15.2a19.9 19.9 0 0 0 6 3.03c.48-.66.91-1.36 1.27-2.1a13 13 0 0 1-2-.96c.17-.12.33-.25.49-.38a14.2 14.2 0 0 0 12.04 0c.16.13.32.26.49.38-.63.37-1.3.69-2 .96.36.74.79 1.44 1.27 2.1a19.9 19.9 0 0 0 6-3.03c.36-4.1-.65-7.66-2.74-10.83zM8.68 13.4c-.81 0-1.47-.75-1.47-1.67 0-.92.65-1.67 1.47-1.67.83 0 1.49.76 1.47 1.67 0 .92-.64 1.67-1.47 1.67zm6.64 0c-.81 0-1.47-.75-1.47-1.67 0-.92.65-1.67 1.47-1.67.83 0 1.49.76 1.47 1.67 0 .92-.64 1.67-1.47 1.67z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/siddesh-patil-165265258/" target="_blank" class="orbit-icon pos-bottom-right" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-          </a>
-          <div class="orbit-avatar">
-            <img src="image.png" alt="Siddesh Patil" id="avatarImg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="avatar-fallback">SP</span>
-          </div>
-        </div>
-
-        <h1 class="hero-name">Siddesh Patil</h1>
-
-        <p class="hero-role">
-          <span>Engineer</span><span class="rdot">·</span><span>ML &amp; Data</span><span class="rdot">·</span>
-          <a href="mailto:siddeshpatil020@gmail.com">siddeshpatil020@gmail.com</a>
-        </p>
-
-        <p class="hero-desc">
-          Building systems at the intersection of machine learning, data pipelines,
-          and real-world hardware. Final-year engineering student, graduating 2026.
-        </p>
-
-        <div class="hero-status">
-          <span class="sdot"></span>
-          <span>Open to opportunities</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="section-inner">
-      <div class="sec-label">Projects</div>
-
-      <div class="fi">
-        <div class="proj-grid">
-
-          <!-- 001 SoilStream — wide flagship -->
-          <div class="proj-card wide flagship">
-            <div class="wide-inner">
-
-              <div>
-                <div class="proj-num-row">
-                  <span class="proj-num">// 001</span>
-                  <div class="proj-badges">
-                    <span class="pbadge ieee">IEEE CONIT 2026</span>
-                    <span class="pbadge patent">Patent · 202621042187</span>
-                    <span class="pbadge copy">© Gov. of India</span>
-                  </div>
-                </div>
-
-                <h3 class="proj-title">SoilStream</h3>
-                <p class="proj-sub">aiot · precision agriculture · solar-powered</p>
-                <p class="proj-desc">
-                  Solar-powered AIoT system for precision agriculture in monsoon-dependent
-                  farming regions. SVR-based rainfall prediction, ResNet50 crop identification,
-                  and a conservative rule-based irrigation controller that only runs the pump
-                  when all three conditions — soil moisture, rainfall forecast, and crop health
-                  — agree.
-                </p>
-
-                <div class="proj-metrics">
-                  <div class="metric">
-                    <span class="metric-val">92.86%</span>
-                    <span class="metric-lbl">rainfall accuracy</span>
-                  </div>
-                  <div class="metric">
-                    <span class="metric-val">99.7%</span>
-                    <span class="metric-lbl">crop identification</span>
-                  </div>
-                  <div class="metric">
-                    <span class="metric-val">0.93</span>
-                    <span class="metric-lbl">svr precision</span>
-                  </div>
-                </div>
-
-                <div class="proj-stack">
-                  <span class="stag">python</span>
-                  <span class="stag">tensorflow</span>
-                  <span class="stag">svr</span>
-                  <span class="stag">resnet50</span>
-                  <span class="stag">esp32</span>
-                  <span class="stag">firebase</span>
-                  <span class="stag">react native</span>
-                  <span class="stag">flask</span>
-                  <span class="stag">lightgbm</span>
-                </div>
-
-                <a href="https://github.com/triumph10/SoilStream-AIoT-based-Irrigation-system-" class="proj-link" target="_blank">github →</a>
-              </div>
-
-              <ul class="proj-feats">
-                <li>SVR rainfall model outperformed LightGBM and GRU on Konkan coastal dataset — chosen for highest precision, not just accuracy</li>
-                <li>ResNet50 multi-class crop classifier at 99.7% test accuracy; EfficientNetB0 overfit catastrophically at 16% test accuracy despite 99.7% val — correctly diagnosed and discarded</li>
-                <li>Irrigation controller only activates when soil moisture is low, rainfall probability is below 60%, and no active disease is detected — three-gate logic</li>
-                <li>ESP32 + BME280 pipeline syncing to Firebase Realtime Database every 5 seconds, running entirely off solar and Li-ion battery</li>
-                <li>React Native app with live sensor dashboard, manual pump override, and Kindwise API-powered disease diagnosis from leaf photos</li>
-              </ul>
-
-            </div>
-          </div>
-
-          <!-- 002 VeriDoc -->
-          <div class="proj-card alt">
-            <div class="proj-num">// 002</div>
-            <h3 class="proj-title">VeriDoc</h3>
-            <p class="proj-sub">hybrid rag · retrieval · evaluation · 2026</p>
-            <p class="proj-desc">
-              Production-grade RAG pipeline combining dense and sparse retrieval
-              over local PDFs. Reciprocal Rank Fusion + cross-encoder reranking
-              with automated RAGAS evaluation using synthetic QA generation.
-            </p>
-
-            <div class="proj-metrics">
-              <div class="metric">
-                <span class="metric-val">1.0</span>
-                <span class="metric-lbl">faithfulness</span>
-              </div>
-              <div class="metric">
-                <span class="metric-val">1.0</span>
-                <span class="metric-lbl">ctx precision</span>
-              </div>
-              <div class="metric">
-                <span class="metric-val">0.89</span>
-                <span class="metric-lbl">answer relevancy</span>
-              </div>
-            </div>
-
-            <div class="proj-stack">
-              <span class="stag">faiss</span>
-              <span class="stag">bm25</span>
-              <span class="stag">sentence-transformers</span>
-              <span class="stag">mistral</span>
-              <span class="stag">mlflow</span>
-              <span class="stag">ragas</span>
-              <span class="stag">gradio</span>
-            </div>
-
-            <a href="https://github.com/triumph10/VeriDoc" class="proj-link" target="_blank">github →</a>
-          </div>
-
-          <!-- 003 Sidekik -->
-          <div class="proj-card alt">
-            <div class="proj-num">// 003</div>
-            <h3 class="proj-title">Sidekik</h3>
-            <p class="proj-sub">bert matching · semantic search · jan–apr 2025</p>
-            <p class="proj-desc">
-              Freelancing platform with a BERT + FAISS recommendation engine
-              for semantic freelancer-project matching. 22-point precision improvement
-              over TF-IDF across 10,000 profiles and 7,000 project records.
-            </p>
-
-            <div class="proj-metrics">
-              <div class="metric">
-                <span class="metric-val">94%</span>
-                <span class="metric-lbl">precision</span>
-              </div>
-              <div class="metric">
-                <span class="metric-val">92%</span>
-                <span class="metric-lbl">f1 score</span>
-              </div>
-              <div class="metric">
-                <span class="metric-val">10k</span>
-                <span class="metric-lbl">profiles</span>
-              </div>
-            </div>
-
-            <div class="proj-stack">
-              <span class="stag">bert</span>
-              <span class="stag">faiss</span>
-              <span class="stag">flask</span>
-              <span class="stag">react</span>
-              <span class="stag">elasticsearch</span>
-              <span class="stag">supabase</span>
-              <span class="stag">postgresql</span>
-            </div>
-
-            <a href="https://github.com/triumph10/Sidekik-A-Freelance-Platform" class="proj-link" target="_blank">github →</a>
-          </div>
-
-          <!-- 004 NeuroAI -->
-          <div class="proj-card alt">
-            <div class="proj-num">// 004</div>
-            <h3 class="proj-title">NeuroAI</h3>
-            <p class="proj-sub">bilstm · emotion prediction · jul–oct 2024</p>
-            <p class="proj-desc">
-              Emotion prediction using a BiLSTM model with activity recommendations,
-              a Gemini API conversational layer, and a personal diary feature.
-              Deployed and accessible via Streamlit.
-            </p>
-
-            <div class="proj-stack">
-              <span class="stag">tensorflow</span>
-              <span class="stag">bilstm</span>
-              <span class="stag">gemini api</span>
-              <span class="stag">streamlit</span>
-              <span class="stag">mysql</span>
-              <span class="stag">python</span>
-            </div>
-
-            <a href="https://github.com/triumph10/NeuroAI" class="proj-link" target="_blank">github →</a>
-          </div>
-
-          <!-- 005 AWS Cloud -->
-          <div class="proj-card alt">
-            <div class="proj-num">// 005</div>
-            <h3 class="proj-title">AWS Cloud</h3>
-            <p class="proj-sub">s3 · ec2 · cloudfront · 2026 · ongoing</p>
-            <p class="proj-desc">
-              Hands-on AWS deployments on free tier. Static site with CloudFront CDN
-              and an ML inference API running on a live EC2 instance — learning cloud
-              by shipping things.
-            </p>
-
-            <div class="proj-stack">
-              <span class="stag">aws s3</span>
-              <span class="stag">cloudfront</span>
-              <span class="stag">ec2</span>
-              <span class="stag">fastapi</span>
-              <span class="stag">linux</span>
-              <span class="stag">python</span>
-            </div>
-
-            <a href="https://github.com/triumph10/cloud-miniprojects" class="proj-link" target="_blank">github →</a>
-          </div>
-
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section class="section" id="blog">
-      <div class="section-inner">
-      <div class="sec-label">Blog</div>
-      <div class="blog-list fi">
-
-        <a href="https://d2tna6wv3bmh8.cloudfront.net/" class="blog-item">
-          <div class="blog-item-main">
-            <h3 class="blog-title">Building SoilStream — lessons from a solar-powered AIoT system</h3>
-            <p class="blog-excerpt">
-              Notes from designing a rainfall-prediction and irrigation-control pipeline for
-              monsoon-dependent farms — model choices, sensor failures, and what actually
-              shipped versus what stayed on the whiteboard.
-            </p>
-          </div>
-          <span class="blog-arr">Read more →</span>
-        </a>
-
-      </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="section-inner">
-      <div class="sec-label">Skills</div>
-      <div class="skills-table fi">
-
-        <div class="skill-row">
-          <span class="skill-cat">languages</span>
-          <span class="skill-vals">Python, SQL, JavaScript, Java, C</span>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-cat">ai / ml</span>
-          <span class="skill-vals">TensorFlow, Keras, BERT, SVR, ResNet50, LightGBM, BiLSTM</span>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-cat">nlp & retrieval</span>
-          <span class="skill-vals">FAISS, BM25, Sentence-Transformers, RAG, RAGAS, Elasticsearch</span>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-cat">data science</span>
-          <span class="skill-vals">pandas, NumPy, Matplotlib, MLflow</span>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-cat">frameworks</span>
-          <span class="skill-vals">Flask, FastAPI, React, Streamlit, Gradio</span>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-cat">cloud & infra</span>
-          <span class="skill-vals">AWS (S3, EC2, CloudFront), Google Cloud, Firebase, Supabase, Git</span>
-        </div>
-
-      </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="section" id="certs">
-      <div class="section-inner">
-      <div class="sec-label">Certifications</div>
-      <div class="certs-wrap fi">
-
-        <div class="cert-item">
-          <div>
-            <div class="cert-name-t">AWS Data Engineering</div>
-            <div class="cert-from">Amazon Web Services · AICTE</div>
-          </div>
-          <div class="cert-yr">2024</div>
-        </div>
-
-        <div class="cert-item">
-          <div>
-            <div class="cert-name-t">Generative AI</div>
-            <div class="cert-from">Google Cloud · AICTE</div>
-          </div>
-          <div class="cert-yr">2024</div>
-        </div>
-
-        <div class="cert-item">
-          <div>
-            <div class="cert-name-t">Google AI / ML</div>
-            <div class="cert-from">Google Cloud · AICTE</div>
-          </div>
-          <div class="cert-yr">2024</div>
-        </div>
-
-        <div class="cert-item">
-          <div>
-            <div class="cert-name-t">Data Science Methodology</div>
-            <div class="cert-from">IBM · Cognitive Class</div>
-          </div>
-          <div class="cert-yr">2024</div>
-        </div>
-
-      </div>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS & IP -->
-    <section class="section" id="publications">
-      <div class="section-inner">
-      <div class="sec-label">Publications &amp; IP</div>
-      <div class="fi">
-        <div class="pub-list">
-
-          <div class="pub-item">
-            <div class="pub-tag-row">
-              <span class="pbadge ieee">IEEE CONIT 2026</span>
-              <span class="pub-id">Paper ID · 960</span>
-            </div>
-            <div class="pub-title">A Solar-Powered AIoT-Based System for Intelligent Soil Monitoring and Automated Irrigation Control</div>
-            <div class="pub-meta">KLE Institute of Technology, Hubballi · Accepted for presentation and publication in conference proceedings</div>
-          </div>
-
-          <div class="pub-item">
-            <div class="pub-tag-row">
-              <span class="pbadge patent">Patent</span>
-              <span class="pub-id">App. No · 202621042187</span>
-            </div>
-            <div class="pub-title">Smart Solar-Powered AIoT System for Precision Agriculture (SoilStream)</div>
-            <div class="pub-meta">Intellectual Property India · Government of India</div>
-          </div>
-
-          <div class="pub-item">
-            <div class="pub-tag-row">
-              <span class="pbadge copy">Copyright</span>
-              <span class="pub-id">Reg. No · SW-13522/2026-CO</span>
-            </div>
-            <div class="pub-title">SoilStream — Registered Software Work</div>
-            <div class="pub-meta">Copyright Office · Government of India</div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- GITHUB -->
-    <section class="section" id="github">
-      <div class="section-inner">
-      <div class="sec-label">GitHub</div>
-      <div class="fi">
-        <div class="gh-label">triumph10 — contribution activity</div>
-        <div class="gh-graph">
-          <img
-            src="https://ghchart.rshah.org/b14dff/triumph10"
-            alt="GitHub Contribution Graph"
-          />
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <div class="section-inner">
-      <div class="sec-label">Education</div>
-      <div class="fi">
-        <div class="edu-block">
-          <div class="edu-degree">B.E. Computer Science &amp; Engineering (Data Science)</div>
-          <div class="edu-school">University of Mumbai · 2022 — 2026</div>
-          <div class="edu-meta">
-            <span class="edu-tag">Honours · AI/ML</span>
-            <span class="edu-tag">A.P. Shah Institute of Technology</span>
-            <span class="edu-tag">Graduating 2026</span>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="section-inner">
-      <div class="fi contact-block">
-        <h2 class="contact-head">Let's build something.</h2>
-        <p class="contact-line">
-          Open to opportunities in AI/ML engineering, data science, or cloud-adjacent roles.
-          Reach out at <a href="mailto:siddeshpatil020@gmail.com" class="contact-email">siddeshpatil020@gmail.com</a>.
-        </p>
-      </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-inner">
-        <p>© 2026 <span>Siddesh Patil</span></p>
-      </div>
-    </footer>
-
+<nav>
+  <div class="wrap">
+    <div class="navlinks">
+      <a href="#">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="https://cdesh.vercel.app/Siddesh_Patil_Resume.pdf" target="_blank">Resume</a>
+    </div>
+    <div class="nav-right">
+      
+      <button class="theme-toggle" onclick="toggleTheme()"><span id="themeIcon">☀️</span></button>
+    </div>
   </div>
+</nav>
 
-  <script src="main.js"></script>
+<div class="wrap">
+  <div class="profile" id="profileCard">
+    <div class="avatar">
+          <img src="image.png" alt="Profile">
+    </div>
+
+    <h1 class="name">Siddesh Patil</h1>
+    <div class="role">Engineer · ML &amp; Data · <a href="mailto:siddeshpatil020@gmail.com">siddeshpatil020@gmail.com</a></div>
+    <p class="bio">Building systems at the intersection of machine learning, data pipelines, and AWS Cloud.</p>
+    <!--
+    <div class="status"><span class="status-dot"></span>Open to opportunities — AI/ML &amp; Data Engineering</div>
+    -->
+    <!--
+    <div class="spotify-line">
+      <svg viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Last played —</span>
+      <span class="track">Rang Jo Lagyo · Rahat Fateh Ali Khan</span>
+    </div>
+-->
+    <div class="social-row" id="socialRow">
+      <a class="sicon" href="https://x.com/sidmoidfunction" title="X" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="sicon" href="https://linkedin.com/in/siddesh-patil-165265258/" title="LinkedIn" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="sicon" href="https://github.com/triumph10" title="GitHub" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <!--
+      <a class="sicon" href="#" title="YouTube" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a class="sicon" href="#" title="Instagram" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      -->
+      <a class="sicon" href="https://in.pinterest.com/siddxesh/" title="Pinterest" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      </a>
+      <a class="sicon" href="mailto:siddeshpatil020@gmail.com" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2 class="sec-title">Projects</h2>
+
+    <div class="coll-card" onclick="this.classList.toggle('open')">
+      <div class="coll-head">
+        <div class="coll-head-left"><h3>SoilStream</h3><span class="sub">Solar-powered AIoT · precision agriculture</span></div>
+        <span class="coll-chev">▼</span>
+      </div>
+      <div class="coll-body">
+        <span class="project-badge">IEEE CONIT 2026 · Patent 202621042187</span>
+        <p class="project-desc">Solar-powered AIoT system for precision agriculture in monsoon-dependent farming regions. SVR-based rainfall prediction, ResNet50 crop identification, and a rule-based irrigation controller that only triggers when soil moisture, rainfall forecast, and crop health all agree.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="val">92.86%</div><div class="lbl">rainfall acc</div></div>
+          <div class="stat"><div class="val">99.7%</div><div class="lbl">crop ID acc</div></div>
+          <div class="stat"><div class="val">0.93</div><div class="lbl">SVR precision</div></div>
+        </div>
+        <div class="tags"><span class="tag">python</span><span class="tag">tensorflow</span><span class="tag">svr</span><span class="tag">resnet50</span><span class="tag">esp32</span><span class="tag">firebase</span><span class="tag">react native</span><span class="tag">flask</span><span class="tag">lightgbm</span></div>
+        <div class="build-notes-title">Build notes</div>
+        <ul class="detail-list">
+          <li>SVR outperformed LightGBM and GRU on the Konkan coastal dataset — chosen for highest precision, not just accuracy.</li>
+          <li>ResNet50 hit 99.7% test accuracy; EfficientNetB0 overfit catastrophically (16% test vs 99.7% val) and was discarded.</li>
+          <li>Three-gate irrigation logic: pump only triggers when soil moisture is low, rainfall probability below 60%, no active disease.</li>
+          <li>ESP32 + BME280 syncs to Firebase every 5 seconds, running off solar and Li-ion battery.</li>
+          <li>React Native app with live sensor dashboard, manual override, and Kindwise API disease diagnosis from leaf photos.</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/triumph10/SoilStream-AIoT-based-Irrigation-system-" onclick="event.stopPropagation()" target="_blank">view repository →</a>
+      </div>
+    </div>
+
+    <div class="coll-card" onclick="this.classList.toggle('open')">
+      <div class="coll-head">
+        <div class="coll-head-left"><h3>VeriDoc</h3><span class="sub">Hybrid RAG pipeline · retrieval evaluation</span></div>
+        <span class="coll-chev">▼</span>
+      </div>
+      <div class="coll-body">
+        <span class="project-badge">2026</span>
+        <p class="project-desc">Production-grade RAG pipeline combining dense and sparse retrieval over local PDFs. Reciprocal Rank Fusion + cross-encoder reranking, with automated RAGAS evaluation using synthetic QA generation.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="val">1.00</div><div class="lbl">faithfulness</div></div>
+          <div class="stat"><div class="val">1.00</div><div class="lbl">ctx precision</div></div>
+          <div class="stat"><div class="val">0.89</div><div class="lbl">answer rel.</div></div>
+        </div>
+        <div class="tags"><span class="tag">faiss</span><span class="tag">bm25</span><span class="tag">sentence-transformers</span><span class="tag">mistral</span><span class="tag">mlflow</span><span class="tag">ragas</span><span class="tag">gradio</span></div>
+        <a class="proj-link" href="https://github.com/triumph10/VeriDoc" onclick="event.stopPropagation()" target="_blank">view repository →</a>
+      </div>
+    </div>
+
+    <div class="coll-card" onclick="this.classList.toggle('open')">
+      <div class="coll-head">
+        <div class="coll-head-left"><h3>Sidekik</h3><span class="sub">BERT + FAISS semantic matching · freelance platform</span></div>
+        <span class="coll-chev">▼</span>
+      </div>
+      <div class="coll-body">
+        <span class="project-badge">Jan – Apr 2025</span>
+        <p class="project-desc">Freelancing platform with a BERT + FAISS recommendation engine — 22-point precision improvement over TF-IDF across 10,000 profiles and 7,000 project records.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="val">94%</div><div class="lbl">precision</div></div>
+          <div class="stat"><div class="val">92%</div><div class="lbl">f1 score</div></div>
+          <div class="stat"><div class="val">10k</div><div class="lbl">profiles</div></div>
+        </div>
+        <div class="tags"><span class="tag">bert</span><span class="tag">faiss</span><span class="tag">flask</span><span class="tag">react</span><span class="tag">elasticsearch</span><span class="tag">supabase</span><span class="tag">postgresql</span></div>
+        <a class="proj-link" href="https://github.com/triumph10/Sidekik-A-Freelance-Platform" onclick="event.stopPropagation()" target="_blank">view repository →</a>
+      </div>
+    </div>
+
+    <div class="coll-card" onclick="this.classList.toggle('open')">
+      <div class="coll-head">
+        <div class="coll-head-left"><h3>NeuroAI</h3><span class="sub">BiLSTM emotion prediction · Gemini API · Streamlit</span></div>
+        <span class="coll-chev">▼</span>
+      </div>
+      <div class="coll-body">
+        <span class="project-badge">Jul – Oct 2024</span>
+        <p class="project-desc">Emotion prediction system on a BiLSTM model, with activity recommendations, a Gemini API conversational layer, and a personal diary feature — deployed via Streamlit.</p>
+        <div class="tags"><span class="tag">tensorflow</span><span class="tag">bilstm</span><span class="tag">gemini api</span><span class="tag">streamlit</span><span class="tag">mysql</span><span class="tag">python</span></div>
+        <a class="proj-link" href="https://github.com/triumph10/NeuroAI" onclick="event.stopPropagation()" target="_blank">view repository →</a>
+      </div>
+    </div>
+
+    <div class="coll-card" onclick="this.classList.toggle('open')">
+      <div class="coll-head">
+        <div class="coll-head-left"><h3>AWS Cloud Miniprojects</h3><span class="sub">S3 · EC2 · CloudFront · ongoing</span></div>
+        <span class="coll-chev">▼</span>
+      </div>
+      <div class="coll-body">
+        <span class="project-badge">2026 · ongoing</span>
+        <p class="project-desc">Hands-on AWS deployments on the free tier — static site via CloudFront CDN and an ML inference API on EC2. Learning cloud by shipping, not reading docs.</p>
+        <div class="tags"><span class="tag">aws s3</span><span class="tag">cloudfront</span><span class="tag">ec2</span><span class="tag">fastapi</span><span class="tag">linux</span><span class="tag">python</span></div>
+        <a class="proj-link" href="https://github.com/triumph10/cloud-miniprojects" onclick="event.stopPropagation()" target="_blank">view repository →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- BLOG — no arrow, just click the row -->
+<section id="blog">
+  <div class="wrap">
+    <h2 class="sec-title">Blog</h2>
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left">
+          <span class="flat-title">Building SoilStream</span>
+          <span class="flat-sub">Why most sensor pipelines die in monsoons.</span>
+        </div>
+        <div class="flat-right">
+          <span class="flat-date">2026</span>
+        </div>
+      </div>
+      <div class="flat-body">
+        <div class="flat-body-inner">
+          <p class="blog-desc">Lessons from designing a rainfall-prediction and irrigation-control pipeline for monsoon-dependent farms — model choices, sensor failures, and what actually shipped versus what stayed on the whiteboard.</p>
+          <a class="blog-read" href="https://d2tna6wv3bmh8.cloudfront.net/" target="_blank">Read full post →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="sec-title">Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-row"><div class="skill-cat">Languages</div><div class="skill-items">Python, SQL, JavaScript, Java, C</div></div>
+      <div class="skill-row"><div class="skill-cat">AI / ML</div><div class="skill-items">TensorFlow, Keras, BERT, SVR, ResNet50, LightGBM, BiLSTM</div></div>
+      <div class="skill-row"><div class="skill-cat">NLP &amp; Retrieval</div><div class="skill-items">FAISS, BM25, Sentence-Transformers, RAG, RAGAS, Elasticsearch</div></div>
+      <div class="skill-row"><div class="skill-cat">Data Science</div><div class="skill-items">pandas, NumPy, Matplotlib, MLflow</div></div>
+      <div class="skill-row"><div class="skill-cat">Frameworks</div><div class="skill-items">Flask, FastAPI, React, Streamlit, Gradio</div></div>
+      <div class="skill-row"><div class="skill-cat">Cloud &amp; Infra</div><div class="skill-items">AWS (S3, EC2, CloudFront), Google Cloud, Firebase, Supabase, Git</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- CERTIFICATIONS — click each row, no arrow -->
+<section id="certifications">
+  <div class="wrap">
+    <h2 class="sec-title">Certifications</h2>
+
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left"><span class="flat-title">AWS Data Engineering</span><span class="flat-sub">Amazon Web Services · AICTE</span></div>
+        <div class="flat-right"><span class="flat-date">2024</span></div>
+      </div>
+      <div class="flat-body"><div class="flat-body-inner"><p class="blog-desc">Data engineering pipelines, ingestion, transformation and analytics on AWS — covering S3, Glue, Redshift, Kinesis, and Athena.</p></div></div>
+    </div>
+
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left"><span class="flat-title">Generative AI</span><span class="flat-sub">Google Cloud · AICTE</span></div>
+        <div class="flat-right"><span class="flat-date">2024</span></div>
+      </div>
+      <div class="flat-body"><div class="flat-body-inner"><p class="blog-desc">Foundations of generative AI, large language models, prompt engineering, and responsible AI development on Google Cloud.</p></div></div>
+    </div>
+
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left"><span class="flat-title">Google AI / ML</span><span class="flat-sub">Google Cloud · AICTE</span></div>
+        <div class="flat-right"><span class="flat-date">2024</span></div>
+      </div>
+      <div class="flat-body"><div class="flat-body-inner"><p class="blog-desc">Machine learning workflows including model training, evaluation, deployment and MLOps practices using Google Cloud AI tools.</p></div></div>
+    </div>
+
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left"><span class="flat-title">Data Science Methodology</span><span class="flat-sub">IBM · Cognitive Class</span></div>
+        <div class="flat-right"><span class="flat-date">2024</span></div>
+      </div>
+      <div class="flat-body"><div class="flat-body-inner"><p class="blog-desc">Structured approach to data science problems — from business understanding and data collection through modeling, evaluation, and deployment.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- PUBLICATIONS — click each row, no arrow -->
+<section id="publications">
+  <div class="wrap">
+    <h2 class="sec-title">Publications &amp; IP</h2>
+
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left"><span class="flat-title">IEEE CONIT 2026 — Paper #960</span><span class="flat-sub">Solar-powered AIoT · soil monitoring</span></div>
+        <div class="flat-right"></div>
+      </div>
+      <div class="flat-body">
+        <div class="flat-body-inner">
+          <div class="cred-inner">
+            <div class="cred-row">
+              <div class="cred-label">IEEE CONIT<br>Paper #960</div>
+              <div class="cred-info"><h4>A Solar-Powered AIoT-Based System for Intelligent Soil Monitoring and Automated Irrigation Control</h4><p>KLE Institute of Technology, Hubballi · Accepted for presentation &amp; publication</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flat-item">
+      <div class="flat-head" onclick="toggleFlat(this)">
+        <div class="flat-head-left"><span class="flat-title">Patent &amp; Copyright — SoilStream</span><span class="flat-sub">Patent 202621042187 · Copyright SW-13522/2026-CO</span></div>
+        <div class="flat-right"></div>
+      </div>
+      <div class="flat-body">
+        <div class="flat-body-inner">
+          <div class="cred-inner">
+            <div class="cred-row">
+              <div class="cred-label">Patent<br>202621042187</div>
+              <div class="cred-info"><h4>Smart Solar-Powered AIoT System for Precision Agriculture</h4><p>Intellectual Property India · Government of India</p></div>
+            </div>
+            <div class="cred-row">
+              <div class="cred-label">Copyright<br>SW-13522/2026-CO</div>
+              <div class="cred-info"><h4>SoilStream — Registered Software Work</h4><p>Copyright Office · Government of India</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- GITHUB -->
+<section id="github">
+  <div class="wrap">
+    <h2 class="sec-title">GitHub Activity</h2>
+    <div class="gh-box">
+      <div class="gh-label">@triumph10 — contribution graph</div>
+      <img id="ghchart" src="https://ghchart.rshah.org/5eff9b/triumph10" alt="GitHub contribution graph">
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <h2 class="sec-title">Education</h2>
+    <div class="edu">
+      <div><h3>B.E. Computer Science &amp; Engineering (Data Science)</h3><p>University of Mumbai · Honours in AI/ML<br>A.P. Shah Institute of Technology</p></div>
+      <div class="right">2022 — 2026<br>Graduating 2026</div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<footer>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#">Home</a><a href="#projects">Work</a><a href="#blog">Blog</a>
+        <a href="https://cdesh.vercel.app/Siddesh_Patil_Resume.pdf" target="_blank">Resume</a>
+        <a href="#github">GitHub</a><a href="#skills">Skills</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <div class="foot-icons">
+          <a class="foot-icon" href="https://x.com/sidmoidfunction">𝕏</a>
+          <a class="foot-icon" href="https://linkedin.com/in/siddesh-patil-165265258/">in</a>
+          <a class="foot-icon" href="https://github.com/triumph10">gh</a>
+          <a class="foot-icon" href="https://in.pinterest.com/siddxesh/">p</a>
+          <a class="foot-icon" href="https://discord.com/users/triumph.10">dc</a>
+          <a class="foot-icon" href="mailto:siddeshpatil020@gmail.com">✉</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Siddesh Patil. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
