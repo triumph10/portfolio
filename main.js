@@ -96,3 +96,22 @@ function toggleTheme(){
     smoothScrollTo(Math.max(targetY, 0), 750);
     history.pushState(null, '', id);
   });
+
+  // ── GA4 SECTION VIEW TRACKING ──────────────────────────────
+if (typeof gtag === 'function') {
+  const trackedSections = document.querySelectorAll('section[id]');
+  const seen = new Set();
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !seen.has(entry.target.id)) {
+        seen.add(entry.target.id);
+        gtag('event', 'section_view', {
+          section_id: entry.target.id
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  trackedSections.forEach(el => sectionObserver.observe(el));
+}
