@@ -1,0 +1,169 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Siddesh Patil} \\ \vspace{1pt}
+    \small 8652109778 $|$
+    \href{mailto:siddeshpatil020@gmail.com}{\underline{siddeshpatil020@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/siddesh-patil-165265258/}{\underline{linkedin/siddesh-patil}} $|$
+    \href{https://github.com/triumph10}{\underline{github/triumph10}} $|$
+    \href{https://cdesh.vercel.app/}{\underline{Portfolio}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{
+AI/ML practitioner with hands-on experience building end-to-end intelligent systems, including a solar-powered AIoT platform, a hybrid retrieval-augmented generation (RAG) pipeline, and a semantic search-based recommendation engine. Hands-on experience with the ML lifecycle across academic projects, from data preprocessing through model evaluation, with growing exposure to AWS cloud. Seeking roles in AI/ML engineering or data science.
+}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  %--- SoilStream ---
+  \resumeProjectHeading
+    {\textbf{SoilStream} $|$ \emph{Python, scikit-learn, TensorFlow, ResNet50, ESP32, Flask, Firebase}
+    $|$ \href{https://github.com/triumph10/SoilStream-AIoT-based-Irrigation-system-}{\underline{GitHub}}}
+    {}
+  \resumeItemListStart
+    \resumeItem{Built an SVR-based rainfall prediction model achieving \textbf{92.86\% accuracy and 0.93 precision} on Konkan regional climate data, outperforming LightGBM and GRU baselines.}
+    \resumeItem{Trained a ResNet50-based CNN for multi-class crop identification achieving 97.2\% test accuracy integrated with a rule-based irrigation controller to reduce waterlogging risk during monsoon season.}
+    \resumeItem{Designed a solar-powered IoT sensing pipeline (ESP32 + BME280 + Firebase) with a mobile app for real-time field monitoring, pump control, and crop disease diagnosis via the Kindwise API.}
+  \resumeItemListEnd
+
+  %--- VeriDoc ---
+  \resumeProjectHeading
+    {\textbf{VeriDoc} $|$ \emph{Python, FAISS, BM25, Sentence-Transformers, Mistral, Gradio}
+    $|$ \href{https://github.com/triumph10/Veridoc}{\underline{GitHub}}}
+    {}
+  \resumeItemListStart
+    \resumeItem{Built a hybrid retrieval pipeline over local PDFs combining dense retrieval (FAISS embeddings) and sparse keyword retrieval (BM25), merging results into a single ranked list before generating cited answers with an LLM (Mistral).}
+    \resumeItem{Evaluated pipeline outputs using the RAGAS framework on synthetic question-answer pairs, tracking faithfulness and relevancy metrics across experiment runs with MLflow.}
+  \resumeItemListEnd
+
+  %--- Sidekik ---
+  \resumeProjectHeading
+    {\textbf{Sidekik} $|$ \emph{Flask, Python, BERT, FAISS, Elasticsearch, Supabase, PostgreSQL}
+    $|$ \href{https://github.com/triumph10/Sidekik-A-Freelance-Platform}{\underline{GitHub}}}
+    {}
+  \resumeItemListStart
+    \resumeItem{Engineered a BERT + FAISS-based semantic matching engine for freelancer-project recommendations, using sentence embeddings and vector similarity search to rank candidates over a corpus of freelancer profiles and project records}.
+    \resumeItem{Implemented semantic search with Elasticsearch and integrated the Adzuna API for real-time skill-demand analytics.}
+    \resumeItem{Built a full-stack platform with Flask APIs, a Supabase backend, including a marketplace for freelancers to list completed work.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Mumbai}{2022 -- 2026}
+    {B.E. Computer Science and Engineering (Data Science) $|$ \textbf{Honours in AI/ML}}{}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{
+    \item{
+      \textbf{Languages}: Python, SQL, Java, C \\[2pt]
+      \textbf{AI/ML}: NLP, RAG, Recommendation Systems, SVR, CNNs, LSTM  \\[2pt]
+      \textbf{Frameworks \& Libraries}: Flask, scikit-learn, Pandas, NumPy, Matplotlib, Sentence-Transformers, FAISS \\[2pt]
+      \textbf{Cloud \& Tools}: Git, GitHub, Firebase, Supabase, Linux
+    }
+  }
+\end{itemize}
+
+%-----------PUBLICATIONS \& IP-----------
+\section{Publications \& Intellectual Property}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Research Paper -- IEEE CONIT 2026 (Accepted)}{Paper ID: 960}
+    {A Solar-Powered AIoT-Based System for Intelligent Soil Monitoring and Automated Irrigation Control}{}
+  \resumeSubheading
+    {Patent Filed -- Government of India}{App. No: 202621042187}
+    {Smart Solar-Powered AIoT System for Precision Agriculture (SoilStream)}{}
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\resumeSubHeadingListStart  
+  \resumeSubheading{Generative AI}{}{Google Cloud Virtual Internship (AICTE)}{}
+  \resumeSubheading{Google AI/ML}{}{Google Cloud Virtual Internship (AICTE)}{}
+  \resumeSubheading{Data Science Methodology}{}{IBM Developer Skills Network}{}
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
