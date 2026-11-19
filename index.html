@@ -149,6 +149,26 @@
 
     <div class="coll-card" onclick="this.classList.toggle('open')">
       <div class="coll-head">
+        <div class="coll-head-left"><h3>MyCore Research Agent</h3><span class="sub">Automated web research · Tavily + Groq</span></div>
+        <span class="coll-chev">▼</span>
+      </div>
+      <div class="coll-body">
+        <span class="project-badge">Agentic workflow</span>
+        <p class="project-desc">Automated AI research assistant in Python. Give it a topic and it plans targeted search queries, gathers up-to-date sources with Tavily, and uses Groq to write a structured research report saved as Markdown.</p>
+        <div class="tags"><span class="tag">python</span><span class="tag">groq</span><span class="tag">tavily</span><span class="tag">gpt-oss-120b</span><span class="tag">llm agents</span></div>
+        <div class="build-notes-title">Build notes</div>
+        <ul class="detail-list">
+          <li>Modular design: separate modules for the research planner, search tool, and report generator.</li>
+          <li>Plans its own queries from the topic before searching, instead of relying on a single prompt.</li>
+          <li>Reports include a summary, findings, opportunities, risks, and references.</li>
+          <li>Each run is saved as a timestamped Markdown file in a <code>reports/</code> folder.</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/triumph10/MyCore-research-agent" onclick="event.stopPropagation()" target="_blank">view repository →</a>
+      </div>
+    </div>
+
+    <div class="coll-card" onclick="this.classList.toggle('open')">
+      <div class="coll-head">
         <div class="coll-head-left"><h3>Sidekik</h3><span class="sub">BERT + FAISS semantic matching · freelance platform</span></div>
         <span class="coll-chev">▼</span>
       </div>
@@ -212,7 +232,6 @@
       <div class="flat-body">
         <div class="flat-body-inner">
           <p class="blog-desc">Lessons from designing a rainfall-prediction and irrigation-control pipeline for monsoon-dependent farms — model choices, sensor failures, and what actually shipped versus what stayed on the whiteboard.</p>
-          <a class="blog-read" href="https://d2tna6wv3bmh8.cloudfront.net/" target="_blank">Read full post →</a>
         </div>
       </div>
     </div>
